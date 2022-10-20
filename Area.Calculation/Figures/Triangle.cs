@@ -4,7 +4,7 @@ namespace Area.Calculation.Figures
 {
     public class Triangle
     {
-        
+
         private string triangleType = string.Empty;
 
         //не ясно нужно использовать тольк три стороны в формуле, или с помощью 3х сторон используя любую формулу нужно вычисли площадь
@@ -43,8 +43,26 @@ namespace Area.Calculation.Figures
             double AC = A + C;
             double CB = C + B;
 
-            if (AB == C || AC == B || CB == A)
+            if (AB == C)
+            {
                 triangleType = "Rectangular";
+            }
+            // приводим к правильному типу в моделе
+            else if (AC == B)
+            {
+                B = B + C;
+                C = B - C;
+                B = B - C;
+                triangleType = "Rectangular";
+            }
+            // приводим к правильному типу в моделе
+            else if (CB == A)
+            {
+                A = A + C;
+                C = A - C;
+                A = A - C;
+                triangleType = "Rectangular";
+            }
             else
                 triangleType = "Another";
 
