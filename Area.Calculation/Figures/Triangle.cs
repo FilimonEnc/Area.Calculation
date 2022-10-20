@@ -4,7 +4,12 @@ namespace Area.Calculation.Figures
 {
     public class Triangle
     {
+        
         private string triangleType = string.Empty;
+
+        //не ясно нужно использовать тольк три стороны в формуле, или с помощью 3х сторон используя любую формулу нужно вычисли площадь
+        //задание sql:
+        //SELECT Product."Name", Category."Name" FROM Products Product LEFT JOIN ProductCategories ProductCategory ON Product.Id = ProductCategory.ProductId LEFT JOIN Categories Category ON ProductCategory.CategoryId = Category.Id;
 
         /// <summary>
         /// Вычисляет площадь
